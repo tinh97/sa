@@ -1,0 +1,251 @@
+﻿@model List<Model.EF.Product>
+@{
+    var trangSuc = (Model.EF.Product)ViewBag.TrangSuc;
+    var nuocHoa = (Model.EF.Product)ViewBag.NuocHoa;
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //var newProduct = (List<Model.EF.Product>)ViewBag.listNewProduct;
+    //var featureProduct = (List<Model.EF.Product>)ViewBag.listfeatureProduct;
+}
+
+<div class="shoes-grid">
+    <a href="single.html">   </a>
+    <div class="wrap-in">
+        <a href="single.html"></a>
+        <div class="wmuSlider example1 slide-grid">
+            <a href="/Product/GetProductByCategory/1">
+                <div class="wmuSliderWrapper">
+                    <article style="position: absolute; width: 100%; opacity: 0;">
+                        <div class="banner-matter">
+                            <div class="col-md-5 banner-bag">
+                                <img class="img-responsive " src="/Assets/Client/images/bag.jpg" alt=" " />
+                            </div>
+                            <div class="col-md-7 banner-off">
+                                <h2>FLAT 50% 0FF</h2>
+                                <label>FOR ALL PURCHASE <b>VALUE</b></label>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et </p>
+                                <span class="on-get">GET NOW</span>
+                            </div>
+
+                            <div class="clearfix"> </div>
+                        </div>
+
+                    </article>
+                    <article style="position: absolute; width: 100%; opacity: 0;">
+                        <div class="banner-matter">
+                            <div class="col-md-5 banner-bag">
+                                <img class="img-responsive " src="/Assets/Client/images/bag1.jpg" alt=" " />
+                            </div>
+                            <div class="col-md-7 banner-off">
+                                <h2>FLAT 50% 0FF</h2>
+                                <label>FOR ALL PURCHASE <b>VALUE</b></label>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et </p>
+                                <span class="on-get">GET NOW</span>
+                            </div>
+
+                            <div class="clearfix"> </div>
+                        </div>
+
+                    </article>
+                    <article style="position: absolute; width: 100%; opacity: 0;">
+                        <div class="banner-matter">
+                            <div class="col-md-5 banner-bag">
+                                <img class="img-responsive " src="/Assets/Client/images/bag.jpg" alt=" " />
+                            </div>
+                            <div class="col-md-7 banner-off">
+                                <h2>FLAT 50% 0FF</h2>
+                                <label>FOR ALL PURCHASE <b>VALUE</b></label>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et </p>
+                                <span class="on-get">GET NOW</span>
+                            </div>
+
+                            <div class="clearfix"> </div>
+                        </div>
+
+                    </article>
+
+                </div>
+            </a>
+            <ul class="wmuSliderPagination">
+                <li><a href="#" class="">0</a></li>
+                <li><a href="#" class="">1</a></li>
+                <li><a href="#" class="">2</a></li>
+            </ul>
+            <script src="/Assets/Client/js/jquery.wmuSlider.js"></script>
+            <script>
+                $('.example1').wmuSlider();
+            </script>
+            @*<a class="wmuSliderPrev"></a>*@
+        </div>
+    </div>
+
+    <!---->
+    <div class="shoes-grid-left">
+        <table>
+            <tr>
+                @foreach (var item in Model)
+                {
+                    <td>
+                        <a href="/Product/ProductDetail/@item.ID">
+                            <div class="col-md-6 con-sed-grid" style="width:auto;" >
+
+                                <div class=" elit-grid">
+
+                                    <h4>@item.Name</h4>
+                                    <label>FOR ALL PURCHASE VALUE</label>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, </p>
+                                    <span class="on-get">GET NOW</span>
+                                </div>
+                                <img class="img-responsive shoe-left" src="@item.Image" style="width:160px; height:220px;" alt=" " />
+
+                                <div class="clearfix"> </div>
+
+                            </div>
+                        </a>
+                    </td>
+                }
+            </tr>
+        </table>
+    </div>
+
+    <div class="products">
+        <h5 class="latest-product">LATEST PRODUCTS</h5>
+        <a class="view-all" href="/Product/GetProductByCategory/1">VIEW ALL<span> </span></a>
+    </div>
+
+    <div class="product-left">
+        @*<div class="col-md-4 chain-grid">
+        <a href="/Product/GetProductByCategory/4"><img class="img-responsive chain" src="/Assets/Client/images/ch.jpg" alt=" " /></a>
+        <span class="star"> </span>
+        <div class="grid-chain-bottom">
+            <h6><a href="/Product/GetProductByCategory/4">Lorem ipsum dolor</a></h6>
+            <div class="star-price">
+                <div class="dolor-grid">
+                    <span class="actual">300$</span>*@
+        @*<span class="reducedfrom">400$</span>*@
+        @*<span class="rating">
+            <input type="radio" class="rating-input" id="rating-input-1-5" name="rating-input-1">
+            <label for="rating-input-1-5" class="rating-star1"> </label>
+            <input type="radio" class="rating-input" id="rating-input-1-4" name="rating-input-1">
+            <label for="rating-input-1-4" class="rating-star1"> </label>
+            <input type="radio" class="rating-input" id="rating-input-1-3" name="rating-input-1">
+            <label for="rating-input-1-3" class="rating-star"> </label>
+            <input type="radio" class="rating-input" id="rating-input-1-2" name="rating-input-1">
+            <label for="rating-input-1-2" class="rating-star"> </label>
+            <input type="radio" class="rating-input" id="rating-input-1-1" name="rating-input-1">
+            <label for="rating-input-1-1" class="rating-star"> </label>
+        </span>*@
+        @*</div>
+                    <a class="now-get get-cart" href="#">ADD TO CART</a>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </div>*@
+        @*<div class="col-md-4 chain-grid">
+        <a href="/Product/GetProductByCategory/1"><img class="img-responsive chain" src="/Assets/Client/images/ba.jpg" alt=" " /></a>
+        <span class="star"> </span>
+        <div class="grid-chain-bottom">
+            <h6><a href="/Product/GetProductByCategory/1">Lorem ipsum dolor</a></h6>
+            <div class="star-price">
+                <div class="dolor-grid">
+                    <span class="actual">300$</span>*@
+        @*<span class="reducedfrom">400$</span>*@
+        @*<span class="rating">
+            <input type="radio" class="rating-input" id="rating-input-1-5" name="rating-input-1">
+            <label for="rating-input-1-5" class="rating-star1"> </label>
+            <input type="radio" class="rating-input" id="rating-input-1-4" name="rating-input-1">
+            <label for="rating-input-1-4" class="rating-star1"> </label>
+            <input type="radio" class="rating-input" id="rating-input-1-3" name="rating-input-1">
+            <label for="rating-input-1-3" class="rating-star"> </label>
+            <input type="radio" class="rating-input" id="rating-input-1-2" name="rating-input-1">
+            <label for="rating-input-1-2" class="rating-star"> </label>
+            <input type="radio" class="rating-input" id="rating-input-1-1" name="rating-input-1">
+            <label for="rating-input-1-1" class="rating-star"> </label>
+        </span>*@
+        @*</div>
+                    <a class="now-get get-cart" href="#">ADD TO CART</a>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </div>*@
+        @*<div class="col-md-4 chain-grid grid-top-chain">
+        <a href="/Product/GetProductByCategory/3"><img class="img-responsive chain" src="/Assets/Client/images/bo.jpg" alt=" " /></a>
+        <span class="star"> </span>
+        <div class="grid-chain-bottom">
+            <h6><a href="/Product/GetProductByCategory/3">Lorem ipsum dolor</a></h6>
+            <div class="star-price">
+                <div class="dolor-grid">*@
+        @*<span class="actual">300$</span>*@
+        @*<span class="reducedfrom">400$</span>*@
+        @*<span class="rating">
+            <input type="radio" class="rating-input" id="rating-input-1-5" name="rating-input-1">
+            <label for="rating-input-1-5" class="rating-star1"> </label>
+            <input type="radio" class="rating-input" id="rating-input-1-4" name="rating-input-1">
+            <label for="rating-input-1-4" class="rating-star1"> </label>
+            <input type="radio" class="rating-input" id="rating-input-1-3" name="rating-input-1">
+            <label for="rating-input-1-3" class="rating-star"> </label>
+            <input type="radio" class="rating-input" id="rating-input-1-2" name="rating-input-1">
+            <label for="rating-input-1-2" class="rating-star"> </label>
+            <input type="radio" class="rating-input" id="rating-input-1-1" name="rating-input-1">
+            <label for="rating-input-1-1" class="rating-star"> </label>
+        </span>*@
+        @*</div>
+                    <a class="now-get get-cart" href="#">ADD TO CART</a>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </div>*@
+
+
+
+
+
+        <div class="col-md-4 chain-grid">
+            <a href="/Product/GetProductByCategory/4"><img class="img-responsive chain" src="/Assets/Client/images/ch.jpg" alt=" " /></a>
+            <span class="star"> </span>
+            <div class="grid-chain-bottom">
+                <h6><a href="/Product/GetProductByCategory/4">@trangSuc.Name</a></h6>
+                <div class="star-price">
+                    <div class="dolor-grid">
+                        <span class="actual">@trangSuc.Price.Value.ToString("c0")</span>
+                    </div>
+                    <a class="now-get get-cart" href="#">ADD TO CART</a>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 chain-grid">
+            <a href="/Product/GetProductByCategory/1"><img class="img-responsive chain" src="/Assets/Client/images/ba.jpg" alt=" " /></a>
+            <span class="star"> </span>
+            <div class="grid-chain-bottom">
+                <h6><a href="/Product/GetProductByCategory/1">@Model[1].Name</a></h6>
+                <div class="star-price">
+                    <div class="dolor-grid">
+                        <span class="actual">@Model[1].Price.Value.ToString("c0")</span>
+                    </div>
+                    <a class="now-get get-cart" href="#">ADD TO CART</a>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 chain-grid grid-top-chain">
+            <a href="/Product/GetProductByCategory/3"><img class="img-responsive chain" src="/Assets/Client/images/bo.jpg" alt=" " /></a>
+            <span class="star"> </span>
+            <div class="grid-chain-bottom">
+                <h6><a href="/Product/GetProductByCategory/3">@nuocHoa.Name</a></h6>
+                <div class="star-price">
+                    <div class="dolor-grid">
+                        <span class="actual">@nuocHoa.Price.Value.ToString("c0")</span>
+                      
+                    </div>
+                    <a class="now-get get-cart" href="#">ADD TO CART</a>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+
+    <div class="clearfix"> </div>
+</div>

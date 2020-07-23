@@ -1,0 +1,16 @@
+D:\C# project\shopee-tedu\Model\bin\Debug\Model.dll.config
+D:\C# project\shopee-tedu\Model\bin\Debug\Model.dll
+D:\C# project\shopee-tedu\Model\bin\Debug\Model.pdb
+D:\C# project\shopee-tedu\Model\bin\Debug\EntityFramework.dll
+D:\C# project\shopee-tedu\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\C# project\shopee-tedu\Model\bin\Debug\PagedList.dll
+D:\C# project\shopee-tedu\Model\bin\Debug\PagedList.Mvc.dll
+D:\C# project\shopee-tedu\Model\bin\Debug\EntityFramework.xml
+D:\C# project\shopee-tedu\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\C# project\shopee-tedu\Model\bin\Debug\PagedList.xml
+D:\C# project\shopee-tedu\Model\bin\Debug\PagedList.Mvc.xml
+D:\C# project\shopee-tedu\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+D:\C# project\shopee-tedu\Model\obj\Debug\Model.csproj.CopyComplete
+D:\C# project\shopee-tedu\Model\obj\Debug\Model.dll
+D:\C# project\shopee-tedu\Model\obj\Debug\Model.pdb
+D:\C# project\shopee-tedu\Model\obj\Debug\Model.csprojAssemblyReference.cache

@@ -1,0 +1,112 @@
+﻿@model List<Model.ViewModel.ProductViewModel>
+
+@{
+    var numberOfCategory = ViewBag.NumberOfCategory;
+    var category = (Model.EF.ProductCategory)ViewBag.Category;
+    ViewBag.Title = category.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<div class="women-product">
+    <div class=" w_content">
+        <div class="women">
+            <a href="#"><h4>@category.Name - <span>Có @numberOfCategory Sản Phẩm</span> </h4></a>
+            <ul class="w_nav">
+                @*<li>Sort : </li>*@
+                Sort :
+                @Html.DropDownList("MySkills", new List<SelectListItem>
+{
+  new SelectListItem{ Text="Select", Value = "1",  },
+  new SelectListItem{ Text="Giá Tăng Dần", Value = "2" },
+  new SelectListItem{ Text="Giá Giảm Dần", Value = "3" },
+  
+
+})
+                @*<li><a class="active" href="#">popular</a></li> |
+        <li><a href="#">new </a></li> |
+        <li><a href="#">discount</a></li> |*@
+                @*<ul>*@
+                    @*<li><a href="#">price: Low High </a></li>*@
+                @*</ul>*@
+                @*<li><a href="#">price: Low High </a></li>*@
+                <div class="clearfix"> </div>
+            </ul>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <!-- grids_of_4 -->
+    <div class="grid-product">
+        @foreach (var item in Model)
+        {
+            <div class="  product-grid">
+                <div class="content_box">
+                    <a href="/Product/ProductDetail/@item.ID">
+                        <div class="left-grid-view grid-view-left">
+                            <img src="@item.Images" class="img-responsive watch-right" style="width:210px; height: 285px;" alt="" />
+                            <div class="mask">
+                                <div class="info">Quick View</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <h4><a href="/Product/ProductDetail/@item.ID"> @item.Name</a></h4>
+                <p>It is a long established fact that a reader</p>
+                @item.Price.Value.ToString("c0")
+            </div>
+        }
+        <div class="clearfix"> </div>
+        <!--Phân trang-->
+        @if (ViewBag.TotalPage > 1)
+        {
+            var pageDisplay = (int)ViewBag.MaxPage;
+            int totalPage = (int)ViewBag.TotalPage;
+            int currentPage = ((int)ViewBag.Page);
+
+            // Create numeric links
+            var startPageIndex = Math.Max(1, currentPage - pageDisplay / 2);
+            var endPageIndex = Math.Min(totalPage, currentPage + pageDisplay / 2);
+
+            var link = "/san-pham/" + category.ID;
+            <nav>
+                <ul class="pagination">
+                    @if (currentPage > ViewBag.First)
+                    {
+                        <li><a href="@link?page=@ViewBag.First" title="Trang đầu" class="first"><i class="fa fa-angle-double-left"></i></a></li>
+                        <li>
+                            <a href="@link?page=@ViewBag.Prev" title="Trang trước" class="prev"><i class="fa fa-angle-left"></i></a>
+                        </li>
+
+                    }
+                    @for (int i = startPageIndex; i <= endPageIndex; i++)
+                    {
+                        if (currentPage == i)
+                        {
+
+                            <li class="active"> <a href="@link?page=@i" title="Trang @i">@i</a></li>
+                        }
+                        else
+                        {
+                            <li class="pos"><a href="@link?page=@i" title="Trang @i">@i</a></li>
+                        }
+                    }
+                    @if (currentPage < totalPage)
+                    {
+                        <li><a href="@link?page=@ViewBag.Next" class="next" title="Trang sau"><i class="fa fa-angle-right"></i></a></li>
+                        <li> <a href="@link?page=@ViewBag.Last" class="last" title="Trang cuối"><i class="fa fa-angle-double-right"></i></a></li>
+                    }
+
+                </ul>
+            </nav>
+
+        }
+        else
+        {
+            <span>Không có bản ghi nào</span>
+        }
+    </div>
+
+
+
+</div>
+

@@ -1,0 +1,9 @@
+﻿@model List<Model.EF.Menu>
+@*<div class="account"><a href="login.html"><span> </span>@Model.ElementAt(0).Text</a></div>*@
+<div class="account"><a href="/"><span> </span>@Model[1].Text</a></div>
+    <ul class="login">
+        <li><a href="login.html"><span style="margin-left: -30px;"> </span>@Model[2].Text</a></li> |
+        <li><a href="register.html">@Model[3].Text</a></li>
+    </ul>
+    <div class="cart"><a href="#"><span> </span>@Model[0].Text</a></div>
+    <div class="clearfix"> </div>
